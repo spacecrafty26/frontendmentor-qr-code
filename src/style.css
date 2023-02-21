@@ -1,0 +1,163 @@
+:root {
+  --bg-card: hsl(0, 0%, 100%);
+  --bg-parent: hsl(212, 45%, 89%);
+  --color-paragraph: hsl(220, 15%, 55%);
+  --color-title: hsl(218, 44%, 22%);
+  --font-paragraph: 15px;
+}
+
+/* 
+  Default Reset
+*/
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  font-family: 'Outfit', sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+#app {
+  isolation: isolate;
+  position: relative;
+  min-height: 100vh;
+  background-color: var(--bg-parent);
+}
+
+/* 
+  Card
+*/
+
+.card {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: min(100% - 3rem, 19.75rem);
+  padding: 1rem;
+  text-align: center;
+  border-radius: 1rem;
+  background-color: var(--bg-card);
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+}
+
+.card__image {
+  border-radius: 1rem;
+}
+
+.card__title {
+  margin-block: 1.25rem;
+  font-size: 1.425rem;
+  line-height: 2rem;
+  color: var(--color-title);
+}
+
+.card__paragraph {
+  width: min(100% - 1rem);
+  margin-block-end: 1.75rem;
+  margin-inline: auto;
+  font-size: var(--color-paragraph);
+  color: var(--color-paragraph);
+}
+
+/* 
+  Attribution
+*/
+
+.attribution {
+  display: none;
+}
+
+/* 
+  Query
+*/
+
+@media screen and (min-width: 1024px) {
+  #app:hover .attribution {
+    display: inline-block;
+    animation: bouncing 2s linear infinite alternate;
+  }
+
+  .attribution {
+    position: absolute;
+    bottom: 5%;
+    left: 50%;
+    padding-block: 1rem;
+    padding-inline: 1.25rem;
+    border-radius: 1rem;
+    background-color: var(--bg-card);
+    color: var(--color-paragraph);
+    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  }
+
+  .attribution>a {
+    font-weight: 700;
+    color: var(--color-title);
+  }
+}
+
+/* 
+  Bounce animation
+*/
+
+@keyframes bouncing {
+  from {
+    transform: translate(-50%, 50%);
+  }
+
+  to {
+    transform: translate(-50%, 0);
+  }
+}
+
+/* 
+  Theme
+*/
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg-card: #312e81;
+    --bg-parent: #4338ca;
+    --color-paragraph: #c7d2fe;
+    --color-title: #eef2ff;
+  }
+}

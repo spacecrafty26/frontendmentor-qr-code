@@ -1,0 +1,20 @@
+{
+  "name": "frontendmentor-qr-code",
+  "private": true,
+  "license": "MIT",
+  "version": "0.0.1",
+  "author": {
+    "name": "Rizky Ardiansyah",
+    "email": "spacecrafty26@gmail.com"
+  },
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "typescript": "^4.9.3",
+    "vite": "^4.1.0"
+  }
+}
