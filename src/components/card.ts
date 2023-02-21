@@ -9,7 +9,7 @@ export default function createCard(
   options: Options,
 ) {
   element!.innerHTML = `
-    <div class="card">
+    <div class="card" role="card">
       <img class="card__image" src=${options.imgUrl} alt="QR Code">
       <h1 class="card__title">${options.title}</h1>
       <p class="card__paragraph">${options.paragraph}</p>
