@@ -4,8 +4,7 @@ import './style.css'
 import createAttribution from './components/attribution';
 
 const appELement = document.querySelector<HTMLDivElement>('#app')!;
-const cardELement = document.createElement('div');
-const attributionELement = document.createElement('div');
+
 
 const mainContent = {
   title: 'Improve your front-end skills by building projects',
@@ -13,9 +12,5 @@ const mainContent = {
   imgUrl: qrCode,
 }
 
-createCard(cardELement, mainContent);
-createAttribution(attributionELement, 'Rizky Ardiansyah');
-
-appELement
-  .appendChild(cardELement)
-  .appendChild(attributionELement);
+createCard(appELement, mainContent);
+createAttribution(appELement, 'Rizky Ardiansyah');

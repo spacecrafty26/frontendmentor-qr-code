@@ -4,15 +4,15 @@ interface Options {
   imgUrl: string;
 }
 
-export default function createCard(
-  element: HTMLDivElement,
-  options: Options,
-) {
-  element!.innerHTML = `
-    <div class="card" role="card">
-      <img class="card__image" src=${options.imgUrl} alt="QR Code">
-      <h1 class="card__title">${options.title}</h1>
-      <p class="card__paragraph">${options.paragraph}</p>
-    </div>
+export default function createCard(element: HTMLDivElement, options: Options) {
+  const cardElement = document.createElement('div');
+  cardElement.className = 'card';
+  cardElement.setAttribute('role', 'card');
+  cardElement.innerHTML = `
+    <img class="card__image" src=${options.imgUrl} alt="QR Code">
+    <h1 class="card__title">${options.title}</h1>
+    <p class="card__paragraph">${options.paragraph}</p>
   `;
+
+  element.appendChild(cardElement);
 }
